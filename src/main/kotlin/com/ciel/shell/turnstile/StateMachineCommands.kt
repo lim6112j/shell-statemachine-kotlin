@@ -21,6 +21,6 @@ class StateMachineCommands(
 		@ShellMethod(key = arrayOf("sm event"))
 		fun event(@ShellOption(defaultValue = "spring") event: Events): String {
 				stateMachine.sendEvent(Mono.just(MessageBuilder.withPayload(event).build())).subscribe()
-				return "Even " + event + " sent"
+				return "Event " + event + " sent"
 		}
 }
