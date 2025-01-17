@@ -37,7 +37,6 @@ class StateMachineConfig : EnumStateMachineConfigurerAdapter<States, Events>(){
 						.target(States.LOCKED)
 						.event(Events.PUSH)
 		}
-		@Bean
 		fun listener() : StateMachineListener<States, Events> {
 				return object : StateMachineListenerAdapter<States, Events>(){
 						override fun stateChanged(from: State<States, Events>?, to: State<States, Events>?){
